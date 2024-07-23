@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block title%}login{%endblock%}
+{% block css%}
+<link rel="stylesheet" href="{% static 'accounts/login.css' %}">
+{% endblock %}
+{%block body %}
+
+<form action="" method="post" novalidate>
+    {%csrf_token%}
+        {{form.as_p}}
+<!--    <input type="text" name="user" placeholder="نام کاربری خود را وارد کنید"><br><br>-->
+<!--    <input type="password" name="password" placeholder="پسورد خود را وارد کنید"><br><br>-->
+    <button type="submit">login</button>
+</form>
+    <form method="post" action="{% url 'accounts:phone' %}">
+        {% csrf_token%}
+        <button type="submit">login with Phone</button>
+    </form>
+{% endblock %}

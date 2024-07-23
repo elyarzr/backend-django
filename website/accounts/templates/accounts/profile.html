@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}profile{%endblock%}
+{%block body%}
+<div class="container">
+        <h1>Your profile: </h1><br>
+    <hr>
+    <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-body-secondary">user: {{profile.user.username}}</h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary">firs_name: {{profile.user.first_name}}</h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary">last_name: {{profile.user.last_name}}</h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary">email: {{profile.user.email}}</h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary">phone: {{profile.phone}}</h6>
+            <h6 class="card-subtitle mb-2 text-body-secondary">address: {{profile.address}}</h6><br>
+            <a href="{% url 'accounts:update' %}" style="background-color: #333333; color: white; padding: 7px 10px; text-decoration-line: none">update</a>
+            <a href="{% url 'accounts:change' %}" style="background-color: #333333; color: white; padding: 7px 10px; text-decoration-line: none">change password</a>
+         </div>
+    </div>
+</div>
+
+
+{%endblock%}
+<table>
+<tr>
+    <th>user: {{profile.user.username}}</th>
+</tr>
+<tr>
+    <th>firs_name: {{profile.user.last_name}}</th>
+</tr>
+<tr>
+    <th>last_name: {{profile.user.last_name}}</th>
+</tr>
+<tr>
+    <th>email: {{profile.user.email}}</th>
+</tr>
+<tr>
+    <th>phone: {{profile.phone}}</th>
+</tr>
+<tr>
+    <th>address: {{profile.address}}</th>
+</tr>
+</table>

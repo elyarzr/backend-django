@@ -1,0 +1,12 @@
+{% if messages %}
+<!--<ul class="messages">-->
+<!--    {% for msg in messages%}-->
+<!--        <h3 {% if msg.tags %} calss="alert alert-{{ msg.tags }}" {% endif %}>{{ msg }}</h3>-->
+<!--    {%endfor%}-->
+<!--</ul>-->
+    {%for msg in messages%}
+        <div class=" alert alert-{{msg.tags}} " role="alert">
+            {{msg}}
+        </div>
+    {%endfor%}
+{% endif %}

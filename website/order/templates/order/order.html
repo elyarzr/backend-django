@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <h1>Order </h1>
+    <h3>your total order price to pay: </h3><br>
+    <h4>total price: {{order.get_price}}</h4>
+    <br>
+    <form method="post" action="{% url 'order:coupon' order.id %}">
+        {%csrf_token%}
+        {{form}}
+        <button type="submit" class="btn btn-danger">Coupon</button>
+    </form>
+    <br>
+    <a href="{% url 'order:request' order.id order.get_price %}" style="background-color: #333333; color: white; padding: 7px 10px; text-decoration-line: none">پرداخت</a>
+</div>
+{% endblock %}

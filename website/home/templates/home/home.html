@@ -1,0 +1,23 @@
+{%extends 'base.html' %}
+{%block title%}
+خانه اصلی فروشگاه
+{%endblock%}
+{% block body %}
+<div class="container">
+         <h1>Home page</h1>
+    <h3>welcome to my shop</h3><br>
+    <hr>
+    <div class="row">
+        {% for data in category %}
+        <div class="col-4">
+
+              <a href=" {{ data.get_absolute_url }} " style="text-decoration: none;">
+                  <img src="{{data.image.url}}" style="width:300px; height: 350px" alt="">
+                <h1>{{ data.name }}</h1>
+              </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
